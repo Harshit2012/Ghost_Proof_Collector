@@ -14,7 +14,7 @@ debug.log("Welcome! Use left and right arrow keys to move the player and avoid t
 const speed = 300;
 const proofSpeed = 190;
 const ghostSpeed = 200;
-let score = 0;
+let proof = 0;
 
 const player = add([
     sprite("player"),
@@ -76,9 +76,9 @@ player.onCollide("ghost", (a) => {
 
 player.onCollide("proof", (b) => {
     destroy(b);
-    score += 1;
+    proof += 1;
     play("points");
-    debug.log("Score: " + score);
+    debug.log("Proof Collected: " + proof);
 });
 
 player.onUpdate(() => {
